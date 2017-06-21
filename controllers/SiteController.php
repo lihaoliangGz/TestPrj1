@@ -124,11 +124,7 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-    
-    //第一次问候Hello World 动作
-    public function actionSay($message='Hello'){
-        return $this->render('say',['message' =>$message]);
-    }
+   
     
     //处理用户提交数据表单的动作
     public function actionEntry(){
