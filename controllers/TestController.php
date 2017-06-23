@@ -119,5 +119,35 @@ class TestController extends Controller {
                     'pagination' => $pagination,
         ]);
     }
+    
+    //相关小测试
+    public function actionBasePath(){
+        echo dirname(__DIR__),"\n\n<br/>";
+        echo __DIR__,"\n\n<br/>";
+        
+        var_dump( Yii::$app->controllerNamespace);
+        echo "\n\n<br/>";
+        var_dump( Yii::$app->controllerMap);
+        echo "\n\n<br/>";
+        var_dump( Yii::$app->controllerPath);
+        echo "\n\n<br/>";
+        var_dump( Yii::$app->params);
+        echo "\n\n<br/>";
+        echo Yii::$app->params['adminEmail'];
+        echo "\n\n<br/>";
+        //var_dump(Yii::$app->components);
+        echo "\n\n<br/>";
+        echo Yii::$app->layoutPath;
+        echo "\n\n<br/>";
+        echo \yii\helpers\Url::toRoute('@app');
+        echo "\n\n<br/>";
+        //echo Yii::$app->componentsId;
+        echo "\n\n<br/>";
+        var_dump( Yii::$app->db);
+        echo "\n\n<br/><br/>";
+
+        return 'hello world!!!!!!!!!!!!!!!!!!';
+       
+    }
 
 }

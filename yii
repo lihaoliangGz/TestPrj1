@@ -10,6 +10,7 @@
 
 //定义全局常量
 defined('YII_DEBUG') or define('YII_DEBUG', true);
+
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
 // 注册 Composer 自动加载器
@@ -20,6 +21,6 @@ require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
 // 加载应用配置
 $config = require(__DIR__ . '/config/console.php');
 
-$application = new yii\console\Application($config);
-$exitCode = $application->run();
+$application = new yii\console\Application($config);//创建一个应用实例并配置
+$exitCode = $application->run();//调用run()处理请求
 exit($exitCode);
