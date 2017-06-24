@@ -56,13 +56,19 @@ class SiteController extends Controller {
 
     /**
      * @inheritdoc
+     *
      */
     public function behaviors() {
+       
         return [
             'access' => [
+                //AccessControl提供基于yii\filters\AccessControl::rules规则的访问控制。
+                // 特别是在动作执行之前，访问控制会检测所有规则并找到第一个符合上下文的变量（比如用户IP地址、登录状态等等）的规则，
+                //  来决定允许还是拒绝请求动作的执行，如果没有规则符合，访问就会被拒绝。
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
                 'rules' => [
+                    //允许认证用户
                     [
                         'actions' => ['logout'],
                         'allow' => true,
@@ -71,7 +77,7 @@ class SiteController extends Controller {
                 ],
             ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::className(),//VerbFilter检查请求动作的HTTP请求方式是否允许执行，如果不允许，会抛出HTTP 405异常
                 'actions' => [
                     'logout' => ['post'],
                 ],

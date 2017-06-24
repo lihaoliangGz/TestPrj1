@@ -7,6 +7,7 @@
  * 
  * 被小部件ListWidget渲染的视图
  * 
+ * 对于 小部件 渲染的视图文件默认放在 WidgetPath/views 目录， 其中 WidgetPath 代表小部件类文件所在的目录
  */
 use yii\helpers\Html;
 ?>

@@ -116,7 +116,7 @@ $config = [
     
     //指定应用所包含的模块
     //'modules'=>[
-         // "booking" 模块以及对应的类
+         // "booking" 模块以及对应的模块类文件BookingModule.php
         //'booking' => 'app\modules\booking\BookingModule',
         // "comment" 模块以及对应的配置数组
 //        'comment' => [

@@ -60,7 +60,7 @@ class TestController extends Controller {
         //在上面的代码里就是使用 request 组件来访问应用实例收到的 $_POST 数据。
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             //验证$model 收到的数据
-
+            
             return $this->render('entry-confirm', ['model' => $model]);
         } else {
             //无论是初始化显示还是数据验证错误,都显示entry页面
