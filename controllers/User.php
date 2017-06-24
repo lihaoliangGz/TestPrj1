@@ -19,5 +19,6 @@ namespace app\controllers;
  */
 class User {
     public $name = 'Alex';
+    public $text='内容内容内容内容内容内容';
 
 }

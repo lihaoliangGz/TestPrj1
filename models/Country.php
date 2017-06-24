@@ -17,10 +17,47 @@ use yii\db\ActiveRecord;
  * 如果类名和数据表名不能直接对应，可以覆写 yii\db\ActiveRecord::tableName() 方法去显式指定相关表名
  */
 class Country extends ActiveRecord{
+//    public $code_test;
+//    public $name_test;
+//    public $population_test;
     
     //显式指定表名
     public static function tableName() {
         return 'country_2';
     }
     
+    /**
+     * 覆盖fields()方法
+     * 作用:增加、删除、重命名和重定义字段
+     * 返回字段定义列表
+     */
+    public function fields() {
+       
+         return[
+            //'code' => 'code_test',
+           // 'name' => 'name_test',
+            //'population' => 'population_test',
+             'code',
+             'name',
+             //'population',
+        ];
+         
+        // 过滤掉一些字段，特别用于你想继承父类实现并不想用一些敏感字段
+        //$fields = parent::fields();
+        // 去掉一些包含敏感信息的字段
+        //unset($fields['auth_key'], $fields['password_hash'], $fields['password_reset_token']);
+        //return $fields;
+    }
+    
+    /**
+     * 覆盖extraFields()方法
+     * 作用:
+     */
+    public function extraFields() {
+        //parent::extraFields();
+        return[
+          
+        ];
+    }
+
 }
