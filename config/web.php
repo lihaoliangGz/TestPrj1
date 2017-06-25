@@ -19,6 +19,12 @@ $config = [
     
     //用数组指定启动阶段yii\base\Application::bootstrap()需要运行的组件,可以指定一下的某一项
     //引导启动组件,将组件加入引导,让它始终载入
+    /**
+     * 因为引导工作必须在处理每一次请求之前都进行一遍，因此让该过程尽可能轻量化就异常重要，请尽可能地优化这一步骤。
+     * 请尽量不要注册太多引导组件。只有他需要在 HTTP 请求处理的全部生命周期中都作用时才需要使用它。
+     * 举一个用到它的范例：一个模块需要注册额外的 URL 解析规则，就应该把它列在应用的 bootstrap 属性之中，这样该 URL 解析规则才能在解析请求之前生效。
+     * （译注：换言之，为了性能需要，除了 URL 解析等少量操作之外，绝大多数组件都应该按需加载，而不是都放在引导过程中。）
+     */
     'bootstrap' => [
          // 应用组件ID或模块ID
         'log',
@@ -80,14 +86,40 @@ $config = [
             ],
         ],
         'db' => $db,
-    /*
-      'urlManager' => [
-      'enablePrettyUrl' => true,
-      'showScriptName' => false,
-      'rules' => [
-      ],
-      ],
-     */
+        
+        /*
+          'urlManager' => [
+          'enablePrettyUrl' => true,
+          'showScriptName' => false,
+          'rules' => [
+          ],
+          ],
+         */
+        
+        
+        //Yii通过名为 assetManager的应用组件实现[[yii\web\AssetManager] 来管理应用组件
+        /**
+        'assetManager'=>[
+             //自定义资源包
+             //bundles为false禁用 所有 的资源包
+             //配置yii\web\AssetManager::bundles 属性，可以自定义资源包的行为
+             'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null, // 一定不要发布该资源
+                    'js' => [
+                        '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+                    ]
+                ],
+            ],
+                
+            //资源部署
+            'assetMap' => [
+                'jquery.js' => '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+            ],
+         
+        ]
+         * 
+         */
     ],
     
     //指定可全局访问的参数,具体参数在config\params.php文件中定义
@@ -138,8 +170,8 @@ $config = [
     //指定应用使用的字符集,默认utf-8
     //'charset'=>'utf-8',
     
-    //指定未配置的请求的响应路由规则(设置默认控制器)
-    //'defaultRoute'=>'',
+    //指定未配置的请求的响应路由规则(设置默认控制器/操作，缺省路由)
+    //'defaultRoute'=>'site/index',
     
     //用数组列表指定应用安装和使用的扩展,默认使用@vendor/yiisoft/extensions.php文件返回的数组
 //     'extensions' => [
@@ -173,9 +205,11 @@ $config = [
     //仅 yii\console\Application 控制台应用支持， 用来指定是否启用Yii中的核心命令，默认值为 true
     //'enableCoreCommands'=>'',
     
+    //全拦截路由；有时候，你会想要将你的 Web 应用临时调整到维护模式，所有的请求下都会显示相同的信息页
+    //'catchAll' =>['site/offline'],//所有请求指向SiteController类的offline操作
+
     /**
      * 应用主体生命周期
-
     当运行 入口脚本 处理请求时，应用主体会经历以下生命周期:
 
     入口脚本加载应用主体配置数组。

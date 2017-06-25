@@ -21,10 +21,10 @@ use yii\base\Widget;
  * @author Administrator
  */
 class ListWidget extends Widget{
-    public $items=['a'=>'b'];
+    public $item='item';
     
     public function run() {
-        return $this->render('list', ['items'=> $this->items]);
+        return $this->render('list', ['item'=> $this->item]);
         
         //调用小部件方法渲染视图
         //yii\base\Widget::render(): 渲染一个 视图名.

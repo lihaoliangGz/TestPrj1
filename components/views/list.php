@@ -12,5 +12,5 @@
 use yii\helpers\Html;
 ?>
 
-<?= Html::encode($items)?>
+<?= Html::encode($item)?>
 

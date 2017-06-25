@@ -30,5 +30,6 @@ class WidgetsController extends Controller {
             return $this->renderPartial('index',['model'=>$model]);
         }
     }
-     
+    
+   
 }

@@ -248,5 +248,9 @@ class SiteController extends Controller {
         echo "将默认操作修改为这个操作";
         echo "\n\n<br/>";
     }
+    
+    public function actionOffline(){
+        echo '系统维护中...';
+    }
 
 }

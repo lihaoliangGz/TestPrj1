@@ -18,6 +18,7 @@ use yii\base\Controller;
  * @author Administrator
  */
 class ViewTestController extends Controller{
+    public $defaultAction='safe';//指定了默认操作
     
     //安全
     public function actionSafe(){
