@@ -109,8 +109,38 @@ class RequestController extends Controller{
     
     //HTTP头
     public function actionHeader(){
-        $header= Yii::$app->request->headers;
+        $request= Yii::$app->request;
+        $header= $request->headers;
+        
         var_dump($header);
+        echo "\n\n<br/>";
+        
+        $accept = $header->get('Accept');
+        var_dump("$accept");
+        echo "\n\n<br/>";
+        
+        $userAgent= $request->userAgent;//返回user-Agent头
+        var_dump($userAgent);
+        echo "\n\n<br/>";
+        
+        $contentType = $request->contentType; //返回contentType头
+        var_dump($contentType);
+        echo "\n\n<br/>";
+        
+        $acceptable=$request->acceptableContentTypes;//返回用户可接受的内容MIME类型。 返回的类型是按照他们的质量得分来排序的
+        var_dump($acceptable);
+        echo "\n\n<br/>";
+        
+        $languages=$request->acceptableLanguages;//返回用户可接受的语言。 返回的语言是按照他们的偏好层次来排序的。
+        var_dump($languages);
+        echo  "\n\n<br/>";
+        
+        $host=$request->userHost;
+        var_dump($host);
+        echo "\n\n<br/>";
+        
+        $ip = $request->userIP;
+        var_dump($ip);
         echo "\n\n<br/>";
     }
 }

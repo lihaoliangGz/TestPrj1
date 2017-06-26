@@ -57,7 +57,7 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '9iyR7_vhHpf9WYi9Vf8_P0G0htacC9Ta',
+            'cookieValidationKey' => '9iyR7_vhHpf9WYi9Vf8_P0G0htacC9Ta',//用来生成哈希值,验证cookie
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -66,8 +66,11 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+        
+        //错误处理器
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'site/error',//errorAction属性使用路由到一个操作，表示不用显示函数调用栈信息的错误会通过执行site/error操作来显示。
+            //'maxSourceLines' => 20,//设置异常页面最多显示20条源代码
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -120,6 +123,31 @@ $config = [
         ]
          * 
          */
+        
+        //配置yii\web\DbSession将数据表作为session存储介质。
+        //'session'=>[
+            //'class'=>'yii\web\DbSession',
+            // 'db' => 'mydb',  // 数据库连接的应用组件ID，默认为'db'.
+            // 'sessionTable' => 'my_session', // session 数据表名，默认为'session'.
+        //]
+        
+        //response组件
+//        'response'=>[
+//             'class' => 'yii\web\Response',
+//            
+//            //定义beforeSend事件来自定义错误响应格式
+//            'on beforeSend' => function ($event) {
+//                $response = $event->sender;
+//                if ($response->data !== null) {
+//                    $response->data = [
+//                        'success' => $response->isSuccessful,
+//                        'data' => $response->data,
+//                    ];
+//                    $response->statusCode = 200;
+//                }
+//            },
+//        ],
+        
     ],
     
     //指定可全局访问的参数,具体参数在config\params.php文件中定义
