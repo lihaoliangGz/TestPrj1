@@ -6,6 +6,7 @@
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
+//$secondDb= require (__DIR__.'/secondDb.php');
 
 $config = [
     'id' => 'basic', //用来区分其他应用的唯一标识ID,推荐使用数字
@@ -14,7 +15,7 @@ $config = [
     //定义多个别名,代替 Yii::setAlias() 方法；数组的key为别名名称，值为对应的路径
 //    'aliases'=>[
 //         '@name1' => 'path/to/path1',
-//        '@name2' => 'path/to/path2',
+//         '@name2' => 'path/to/path2',
 //    ],
     
     //用数组指定启动阶段yii\base\Application::bootstrap()需要运行的组件,可以指定一下的某一项
@@ -53,7 +54,7 @@ $config = [
     // 'catchAll' =>[],
     
     //注册在其他地方使用的应用组件,每一个应用组件指定一个key-value对的数组，key代表组件ID，value代表组件类名或 配置
-    //请谨慎注册太多应用组件，应用组件就像全局变量，使用太多可能加大测试和维护的难度。 一般情况下可以在需要时再创建本地组件。
+    //请谨慎注册太多应用组件，应用组件就像全局变量，使用太多可能加大测试和维护的难度。 一般情况下可以在需要时再创建本地组件,调用 yii\di\ServiceLocator::set() 方法进行注册
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -88,7 +89,10 @@ $config = [
                 ],
             ],
         ],
+        
+        //配置数据库连接组件
         'db' => $db,
+        //'secondDb' =>$secondDb,//配置第二个数据库连接
         
         /*
           'urlManager' => [
