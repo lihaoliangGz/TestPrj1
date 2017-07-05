@@ -17,9 +17,9 @@ use yii\db\ActiveRecord;
  * 如果类名和数据表名不能直接对应，可以覆写 yii\db\ActiveRecord::tableName() 方法去显式指定相关表名
  */
 class Country extends ActiveRecord{
-//    public $code_test;
-//    public $name_test;
-//    public $population_test;
+    //public $code_test;
+    //public $name_test;
+    //public $population_test;
     
     //显式指定表名
     public static function tableName() {
@@ -35,10 +35,10 @@ class Country extends ActiveRecord{
        
          return[
             //'code' => 'code_test',
-           // 'name' => 'name_test',
+            //'name' => 'name_test',
             //'population' => 'population_test',
-             'code',
-             'name',
+            'code',
+            'name',
              //'population',
         ];
          
@@ -53,11 +53,11 @@ class Country extends ActiveRecord{
      * 覆盖extraFields()方法
      * 作用:
      */
-    public function extraFields() {
-        //parent::extraFields();
-        return[
-          
-        ];
-    }
+//    public function extraFields() {
+//        //parent::extraFields();
+//        return[
+//          
+//        ];
+//    }
 
 }

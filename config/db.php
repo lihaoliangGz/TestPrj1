@@ -34,5 +34,21 @@ return [
 //        'password' => $password,
 //    ]);
 //    $connection->open();
-
+    
+    // 配置从服务器
+//    'slaveConfig' => [
+//        'username' => 'slave',
+//        'password' => '',
+//        'attributes' => [
+//            // use a smaller connection timeout
+//            PDO::ATTR_TIMEOUT => 10,
+//        ],
+//    ],
+    // 配置从服务器组
+//    'slaves' => [
+//        ['dsn' => 'dsn for slave server 1'],
+//        ['dsn' => 'dsn for slave server 2'],
+//        ['dsn' => 'dsn for slave server 3'],
+//        ['dsn' => 'dsn for slave server 4'],
+//    ],
 ];
