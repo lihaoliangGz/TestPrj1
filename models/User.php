@@ -30,6 +30,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 
     /**
      * @inheritdoc
+     * 据指定的用户ID查找 认证模型类的实例，当你需要使用session来维持登录状态的时候会用到这个方法。
      */
     public static function findIdentity($id)
     {
@@ -38,6 +39,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 
     /**
      * @inheritdoc
+     * 根据指定的存取令牌查找 认证模型类的实例，该方法用于 通过单个加密令牌认证用户的时候（比如无状态的RESTful应用）
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
@@ -69,6 +71,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 
     /**
      * @inheritdoc
+     * 获取该认证实例表示的用户的ID。
      */
     public function getId()
     {
@@ -77,6 +80,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 
     /**
      * @inheritdoc
+     * 获取基于 cookie 登录时使用的认证密钥。 认证密钥储存在 cookie 里并且将来会与服务端的版本进行比较以确保 cookie的有效性
      */
     public function getAuthKey()
     {
@@ -85,6 +89,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
 
     /**
      * @inheritdoc
+     * 是基于 cookie 登录密钥的 验证的逻辑的实现
      */
     public function validateAuthKey($authKey)
     {

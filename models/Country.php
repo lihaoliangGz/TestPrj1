@@ -10,6 +10,8 @@
  */
 
 namespace app\models;
+
+use Yii;
 use yii\db\ActiveRecord;
 
 /*
@@ -59,5 +61,14 @@ class Country extends ActiveRecord{
 //          
 //        ];
 //    }
+    
+    /**
+     * 设置该AR类使用不同的数据库
+     */
+    //public static function getDb() {
+        //return Yii::$app->db2; //使用名为db2的应用组件
+    //}
+    
+    
 
 }

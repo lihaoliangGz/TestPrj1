@@ -62,6 +62,7 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+            'keyPrefix'=>'TestPrj1',//设置唯一键前缀,为了确保互通性，此处只能使用字母和数字
         ],
         'user' => [
             'identityClass' => 'app\models\User',
