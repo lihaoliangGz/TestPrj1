@@ -180,15 +180,25 @@ $config = [
     //'sourceLanguage' =>'',
     
     //指定应用所包含的模块
-    //'modules'=>[
-         // "booking" 模块以及对应的模块类文件BookingModule.php
-        //'booking' => 'app\modules\booking\BookingModule',
-        // "comment" 模块以及对应的配置数组
-//        'comment' => [
-//            'class' => 'app\modules\comment\CommentModule',
-//            'db' => 'db',
-//        ],
-    //],
+    'modules'=>[
+        //"booking" 模块以及对应的模块类文件BookingModule.php  //方式一
+        //'booking' => 'app\modules\booking\BookingModule', //方式二
+        //"comment" 模块以及对应的配置数组 //方式三
+        //'comment' => [
+            //'class' => 'app\modules\comment\CommentModule',
+            //'db' => 'db',
+        //],
+        
+        //将\kartik\grid\Module模块(可以访问高级功能，如下载操作（导出为csv，text，html，xls，pdf或json）)，添加到配置文件中
+        'gridview'=>[
+            'class'=>'\kartik\grid\Module',
+            // enter optional module parameters below - only if you need to  
+            // use your own export download action or custom translation 
+            // message source
+            // 'downloadAction' => 'gridview/export/download',
+            // 'i18n' => []
+        ],
+    ],
     
     //指定展示给终端用户的应用名称,如果其他地方的代码没有用到，可以不配置该属性。
     //'name'=>'My Application!!!!',

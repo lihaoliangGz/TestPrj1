@@ -32,8 +32,11 @@ class ComposerStaticInitc97758983e989ebd2cfaf8c6929e8d1c
         ),
         'k' => 
         array (
+            'kartik\\helpers\\' => 15,
             'kartik\\grid\\' => 12,
+            'kartik\\form\\' => 12,
             'kartik\\dialog\\' => 14,
+            'kartik\\builder\\' => 15,
             'kartik\\base\\' => 12,
         ),
         'c' => 
@@ -121,13 +124,25 @@ class ComposerStaticInitc97758983e989ebd2cfaf8c6929e8d1c
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
+        'kartik\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
+        ),
         'kartik\\grid\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-grid',
         ),
+        'kartik\\form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform',
+        ),
         'kartik\\dialog\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
+        ),
+        'kartik\\builder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-builder',
         ),
         'kartik\\base\\' => 
         array (
