@@ -153,6 +153,47 @@ $config = [
 //            },
 //        ],
         
+        //配置formatter组件
+        'formatter'=>[
+            //以下属性属于yii\i18n\Formatter类的属性
+            'dateFormat' => 'yyyy---MM---dd',
+            //'decimalSeparator' => ',', //调整数字格式化的格式
+            //'thousandSeparator' => ' ', //调整数字格式化的格式
+            //'currencyCode' => 'EUR', //货币编码
+            'currencyCode' => '￥', //货币编码
+            //'booleanFormat'=>'',
+        ],
+        
+        //配置主题
+        /**
+        'view'=>[
+            'theme'=>[
+                'basePath' => '@app/themes/basic',
+                'baseUrl' => '@web/themes/basic',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/basic',// @app/views/site/about.php主题化成@app/themes/basic/site/about.php 
+                    
+                    //主题化模块
+                    //'@app/modules' => '@app/themes/basic/modules', //将 @app/modules/blog/views/comment/index.php 主题化成 @app/themes/basic/modules/blog/views/comment/index.php。
+                    
+                    //主题化小部件
+                    //'@app/widgets' => '@app/themes/basic/widgets', // 将 @app/widgets/currency/views/index.php 主题化成 @app/themes/basic/widgets/currency/index.php
+                    
+                    //主题继承,通过一个单视图路径去映射多个目标
+                    '@app/views'=>[
+                        //视图 @app/views/site/index.php 将被主题化成 @app/themes/christmas/site/index.php 或者 @app/themes/basic/site/index.php， 这取决于哪个主题文件存在。
+                        //假如都存在，那么第一个将被优先使用
+                        '@app/themes/christmas',
+                        '@app/themes/basic',
+                    ],
+                    
+                ],
+            ],
+            
+        ],
+         * 
+         */
+        
     ],
     
     //指定可全局访问的参数,具体参数在config\params.php文件中定义
