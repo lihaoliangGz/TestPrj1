@@ -22,7 +22,10 @@ class LoginFormTest extends Model{
     public $username;
     public $password;
     public $email;
-    
+    public $uploadFile;
+    public $items;
+    public $product_category;
+
     public function rules() {
         return[
           //定义验证规则
