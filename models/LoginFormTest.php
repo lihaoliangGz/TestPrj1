@@ -21,6 +21,7 @@ use yii\base\Model;
 class LoginFormTest extends Model{
     public $username;
     public $password;
+    public $email;
     
     public function rules() {
         return[

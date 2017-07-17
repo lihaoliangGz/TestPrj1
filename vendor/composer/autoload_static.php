@@ -25,6 +25,7 @@ class ComposerStaticInitc97758983e989ebd2cfaf8c6929e8d1c
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
+            'yidashi\\markdown\\' => 17,
         ),
         'p' => 
         array (
@@ -117,6 +118,10 @@ class ComposerStaticInitc97758983e989ebd2cfaf8c6929e8d1c
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'yidashi\\markdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yidashi/yii2-bootstrap-markdown',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (

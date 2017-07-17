@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "yiisoft/yii2-imagine":"*",
         "kartik-v/yii2-grid":"@dev",
-        "kartik-v/yii2-builder":"@dev"
+        "kartik-v/yii2-builder":"@dev",
+        "yidashi/yii2-bootstrap-markdown": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
