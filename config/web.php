@@ -6,7 +6,9 @@
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
-//$secondDb= require (__DIR__.'/secondDb.php');
+$secondDb= require (__DIR__.'/secondDb.php');
+$threeDb= require (__DIR__.'/threeDb.php'); //全国地址数据库
+$threeDb= require (__DIR__.'/threeDb.php'); //全国地址数据库
 
 $config = [
     'id' => 'basic', //用来区分其他应用的唯一标识ID,推荐使用数字
@@ -93,7 +95,8 @@ $config = [
         
         //配置数据库连接组件
         'db' => $db,
-        //'secondDb' =>$secondDb,//配置第二个数据库连接
+        'secondDb' =>$secondDb,//配置第二个数据库连接
+        'threeDb' =>$threeDb,//配置全国地址数据库连接
         
         /*
           'urlManager' => [
