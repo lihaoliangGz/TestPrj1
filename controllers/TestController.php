@@ -149,5 +149,11 @@ class TestController extends Controller {
         return 'hello world!!!!!!!!!!!!!!!!!!';
        
     }
+    
+    //相关小测试2
+    public function actionTest(){
+        var_dump("HelloWorld");
+        return $this->render('test');
+    }
 
 }
