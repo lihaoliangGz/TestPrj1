@@ -75,15 +75,6 @@ return array (
       '@kartik/dialog' => $vendorDir . '/kartik-v/yii2-dialog',
     ),
   ),
-  'kartik-v/yii2-grid' => 
-  array (
-    'name' => 'kartik-v/yii2-grid',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
-    ),
-  ),
   'kartik-v/yii2-helpers' => 
   array (
     'name' => 'kartik-v/yii2-helpers',
@@ -109,6 +100,15 @@ return array (
     'alias' => 
     array (
       '@kartik/builder' => $vendorDir . '/kartik-v/yii2-builder',
+    ),
+  ),
+  'kartik-v/yii2-grid' => 
+  array (
+    'name' => 'kartik-v/yii2-grid',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
     ),
   ),
 );

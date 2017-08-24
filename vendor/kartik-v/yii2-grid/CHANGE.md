@@ -1,6 +1,17 @@
 Change Log: `yii2-grid`
 =======================
 
+## Version 3.1.6
+
+**Date:** 29-Jul-2017 (_under development_)
+
+- (enh #672): Simplify module code.
+    - Eliminate dependency on Yii Session to generate `exportEncryptSalt`
+    - Create new `Demo` class to manage grid demo message translations
+- (bug #671): Initialize checkbox column asset more correctly.
+- (enh #666, #658): Enhance export to render header with `perfectScrollbar` and `floatOverflowContainer`.
+- (enh #664): Allow to specify Editable class in `editableOptions`.
+
 ## Version 3.1.5
 
 **Date:** 09-Jun-2017
